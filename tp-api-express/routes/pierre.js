@@ -14,19 +14,19 @@ let users = [{
 /* GET users listing. */
 router.get('/', (req, res) => {
   // Get List of user and return JSON
+  res.status(200).json({ users });
   axios.get('http://www.omdbapi.com/?t=inception&apikey=b3d7a4f5')
     .then(function (response) {
       // handle success
 
       console.log(response);
+
     })
     .catch(function (error) {
       // handle error
-      if(4==3)
-      {
-      res.status(200).json({ users });
+
       console.log(error);
-      }
+
     })
     .finally(function () {
       // always executed
